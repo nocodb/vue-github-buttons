@@ -105,7 +105,7 @@ $RECYCLE.BIN/
 # End of https://www.gitignore.io/api/node,sass,linux,windows
 
 # Dist
-dist/
+#dist/
 
 # Extracted icons
 src/components/icons/

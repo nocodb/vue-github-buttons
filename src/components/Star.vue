@@ -4,7 +4,7 @@
 		:link="slug"
 		:count="count"
 		:count-link="`${slug}/stargazers`"
-		icon="star"
+		:icon="icon || 'star'"
 	>
 		Star
 	</gh-button>
