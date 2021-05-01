@@ -5,17 +5,18 @@
 		:count="count"
 		:count-link="`${slug}/stargazers`"
 		:icon="icon || 'star'"
+		:reverse="reverse"
 	>
-		Star
+		<slot>Star</slot>
 	</gh-button>
 </template>
 
 <script lang="ts">
-import { Component, Mixins } from 'vue-property-decorator';
+import {Component, Mixins} from 'vue-property-decorator';
 
 import Button from './Button.vue';
 import optionsStore from '../lib/OptionsStore';
-import { getCountMixin, repoMixin } from '../mixins';
+import {getCountMixin, repoMixin} from '../mixins';
 
 @Component({
 	name: 'GitHubButtonStar',
@@ -26,7 +27,7 @@ import { getCountMixin, repoMixin } from '../mixins';
 export default class GitHubButtonStar extends Mixins(getCountMixin, repoMixin) {
 	async loadCount() {
 		if (this.showCount) {
-			const { useCache } = optionsStore.value;
+			const {useCache} = optionsStore.value;
 			const requestPath = `/repos/${this.slug}`;
 			this.count = await this.getCount(
 				requestPath,
@@ -39,6 +40,7 @@ export default class GitHubButtonStar extends Mixins(getCountMixin, repoMixin) {
 	async created() {
 		await this.loadCount();
 	}
+
 	async updated() {
 		await this.loadCount();
 	}

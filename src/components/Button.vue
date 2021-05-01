@@ -1,21 +1,23 @@
 <template>
-	<div class="gh-button-container">
+	<div class="gh-button-container"
+		 :class="{reverse}">
 		<template v-if="!isLoading">
 			<a
-				:class="{ 'with-count': hasCount }"
+				:class="{ 'with-count': hasCount,reverse }"
 				:href="fullLink"
 				class="gh-button"
 				target="_blank"
 				rel="noopener"
 			>
-				<component :is="iconComponentName" />
-				<slot />
+				<component :is="iconComponentName"/>
+				<slot/>
 			</a>
 			<a
 				v-if="hasCount"
 				:href="fullCountLink"
 				:target="hasCountLink ? '_blank' : null"
 				class="social-count"
+				:class="{reverse}"
 				rel="noopener"
 			>
 				{{ count | formatNumber }}
@@ -31,10 +33,10 @@
 
 <script lang="ts">
 import formatThousands from 'format-thousands';
-import { Vue, Component, Prop } from 'vue-property-decorator';
+import {Vue, Component, Prop} from 'vue-property-decorator';
 
-import { GH_URL } from '../lib/constants';
-import { isset } from '../utils/';
+import {GH_URL} from '../lib/constants';
+import {isset} from '../utils/';
 import getIconComponents from '../getIconComponents';
 
 @Component({
@@ -51,31 +53,36 @@ import getIconComponents from '../getIconComponents';
 	}
 })
 export default class GitHubButton extends Vue {
-	@Prop({ type: String, required: true }) icon: string;
-	@Prop({ type: String, required: true }) link: string;
-	@Prop({ type: Boolean, default: false }) isLoading: boolean;
-	@Prop({ type: Number, default: 0 }) count: number;
-	@Prop({ type: String, default: '' }) countLink: string;
+	@Prop({type: String, required: true}) icon: string;
+	@Prop({type: String, required: true}) link: string;
+	@Prop({type: Boolean, default: false}) isLoading: boolean;
+	@Prop({type: Boolean, default: false}) reverse: boolean;
+	@Prop({type: Number, default: 0}) count: number;
+	@Prop({type: String, default: ''}) countLink: string;
 
 	get iconComponentName(): string {
 		return `${this.icon}-icon`;
 	}
+
 	get hasCount(): boolean {
-		const { count } = this;
+		const {count} = this;
 
 		// Show count when count exist and greater than or equal to 0
 		return isset(count) && (count >= 0);
 	}
+
 	get hasCountLink(): boolean {
 		const countLink = this.countLink;
 
 		return isset(countLink);
 	}
+
 	get fullLink(): string {
 		return `${GH_URL}/${this.link}`;
 	}
+
 	get fullCountLink(): string {
-		const { countLink } = this;
+		const {countLink} = this;
 
 		if (this.hasCountLink) {
 			return `${GH_URL}/${countLink}`;

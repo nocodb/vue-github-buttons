@@ -1157,6 +1157,9 @@ var GitHubButton = /** @class */ (function (_super) {
         Prop({ type: Boolean, default: false })
     ], GitHubButton.prototype, "isLoading", void 0);
     tslib.__decorate([
+        Prop({ type: Boolean, default: false })
+    ], GitHubButton.prototype, "reverse", void 0);
+    tslib.__decorate([
         Prop({ type: Number, default: 0 })
     ], GitHubButton.prototype, "count", void 0);
     tslib.__decorate([
@@ -1185,7 +1188,7 @@ var GitHubButton = /** @class */ (function (_super) {
 const __vue_script__$5 = GitHubButton;
 
 /* template */
-var __vue_render__$5 = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"gh-button-container"},[(!_vm.isLoading)?[_vm._ssrNode("<a"+(_vm._ssrAttr("href",_vm.fullLink))+" target=\"_blank\" rel=\"noopener\""+(_vm._ssrClass("gh-button",{ 'with-count': _vm.hasCount }))+">","</a>",[_c(_vm.iconComponentName,{tag:"component"}),_vm._ssrNode(" "),_vm._t("default")],2),_vm._ssrNode(" "+((_vm.hasCount)?("<a"+(_vm._ssrAttr("href",_vm.fullCountLink))+(_vm._ssrAttr("target",_vm.hasCountLink ? '_blank' : null))+" rel=\"noopener\" class=\"social-count\">"+_vm._ssrEscape("\n\t\t\t"+_vm._s(_vm._f("formatNumber")(_vm.count))+"\n\t\t")+"</a>"):"<!---->"))]:[_vm._ssrNode("<a class=\"gh-button\">","</a>",[_c('sync-icon')],1)]],2)};
+var __vue_render__$5 = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"gh-button-container",class:{reverse: _vm.reverse}},[(!_vm.isLoading)?[_vm._ssrNode("<a"+(_vm._ssrAttr("href",_vm.fullLink))+" target=\"_blank\" rel=\"noopener\""+(_vm._ssrClass("gh-button",{ 'with-count': _vm.hasCount,reverse: _vm.reverse }))+">","</a>",[_c(_vm.iconComponentName,{tag:"component"}),_vm._ssrNode(" "),_vm._t("default")],2),_vm._ssrNode(" "+((_vm.hasCount)?("<a"+(_vm._ssrAttr("href",_vm.fullCountLink))+(_vm._ssrAttr("target",_vm.hasCountLink ? '_blank' : null))+" rel=\"noopener\""+(_vm._ssrClass("social-count",{reverse: _vm.reverse}))+">"+_vm._ssrEscape("\n\t\t\t"+_vm._s(_vm._f("formatNumber")(_vm.count))+"\n\t\t")+"</a>"):"<!---->"))]:[_vm._ssrNode("<a class=\"gh-button\">","</a>",[_c('sync-icon')],1)]],2)};
 var __vue_staticRenderFns__$5 = [];
 
   /* style */
@@ -1193,7 +1196,7 @@ var __vue_staticRenderFns__$5 = [];
   /* scoped */
   const __vue_scope_id__$5 = undefined;
   /* module identifier */
-  const __vue_module_identifier__$5 = "data-v-13771c0c";
+  const __vue_module_identifier__$5 = "data-v-9d0d91c0";
   /* functional template */
   const __vue_is_functional_template__$5 = false;
   /* style inject */
@@ -1347,6 +1350,9 @@ var RepoMixin = /** @class */ (function (_super) {
     tslib.__decorate([
         Prop({ type: Boolean, default: false })
     ], RepoMixin.prototype, "showCount", void 0);
+    tslib.__decorate([
+        Prop({ type: Boolean, default: false })
+    ], RepoMixin.prototype, "reverse", void 0);
     RepoMixin = tslib.__decorate([
         Component
     ], RepoMixin);
@@ -1637,7 +1643,7 @@ var GitHubButtonStar = /** @class */ (function (_super) {
 const __vue_script__$8 = GitHubButtonStar;
 
 /* template */
-var __vue_render__$8 = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('gh-button',{attrs:{"is-loading":_vm.isLoading,"link":_vm.slug,"count":_vm.count,"count-link":(_vm.slug + "/stargazers"),"icon":_vm.icon || 'star'}},[_vm._v("\n\tStar\n")])};
+var __vue_render__$8 = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('gh-button',{attrs:{"is-loading":_vm.isLoading,"link":_vm.slug,"count":_vm.count,"count-link":(_vm.slug + "/stargazers"),"icon":_vm.icon || 'star',"reverse":_vm.reverse}},[_vm._t("default",[_vm._v("Star")])],2)};
 var __vue_staticRenderFns__$8 = [];
 
   /* style */
@@ -1645,7 +1651,7 @@ var __vue_staticRenderFns__$8 = [];
   /* scoped */
   const __vue_scope_id__$8 = undefined;
   /* module identifier */
-  const __vue_module_identifier__$8 = "data-v-f22fa364";
+  const __vue_module_identifier__$8 = "data-v-4b8cdace";
   /* functional template */
   const __vue_is_functional_template__$8 = false;
   /* style inject */

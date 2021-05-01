@@ -7,12 +7,14 @@
 		<gh-btns-star
 			slug="vuejs/vue"
 			show-count
-		/>
+			reverse
+		></gh-btns-star>
 		<gh-btns-star
 			slug="vuejs/vue"
 			show-count
 			icon="mark-github"
-		/>
+			reverse>
+		</gh-btns-star>
 		<gh-btns-fork
 			slug="vuejs/vue"
 			show-count

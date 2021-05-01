@@ -31,6 +31,11 @@
   visibility: hidden;
 }
 
+.gh-button-container.reverse {
+  display: flex;
+  flex-flow: row-reverse;
+}
+
 .gh-button {
   background-color: #eff3f6;
   background-image: linear-gradient(-180deg, #fafbfc 0%, #eff3f6 90%);
@@ -79,18 +84,18 @@
   outline: 0;
 }
 
-.gh-button.with-count {
+.gh-button.with-count:not(.reverse) {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
 
+.gh-button.with-count.reverse {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
 a.social-count {
   background-color: #fff;
-  border-bottom-right-radius: 3px;
-  border-top-right-radius: 3px;
-  border-top: 1px solid rgba(27, 31, 35, 0.2);
-  border-right: 1px solid rgba(27, 31, 35, 0.2);
-  border-bottom: 1px solid rgba(27, 31, 35, 0.2);
   color: #24292e;
   float: left;
   font-size: 12px;
@@ -99,6 +104,22 @@ a.social-count {
   padding: 3px 10px;
   text-decoration: none !important;
   vertical-align: middle;
+}
+
+a.social-count:not(.reverse) {
+  border-bottom-right-radius: 3px;
+  border-top-right-radius: 3px;
+  border-top: 1px solid rgba(27, 31, 35, 0.2);
+  border-right: 1px solid rgba(27, 31, 35, 0.2);
+  border-bottom: 1px solid rgba(27, 31, 35, 0.2);
+}
+
+a.social-count.reverse {
+  border-bottom-left-radius: 3px;
+  border-top-left-radius: 3px;
+  border-top: 1px solid rgba(27, 31, 35, 0.2);
+  border-left: 1px solid rgba(27, 31, 35, 0.2);
+  border-bottom: 1px solid rgba(27, 31, 35, 0.2);
 }
 
 a.social-count:hover {

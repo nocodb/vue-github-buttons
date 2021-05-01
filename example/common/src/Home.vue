@@ -7,7 +7,7 @@
 		<gh-btns-star
 			slug="vuejs/vue"
 			show-count
-		/>
+		></gh-btns-star>
 		<gh-btns-fork
 			slug="vuejs/vue"
 			show-count

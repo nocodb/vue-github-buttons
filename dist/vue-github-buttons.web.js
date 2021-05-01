@@ -1311,6 +1311,9 @@ var VueGitHubButtons = (function (Vue) {
             Prop({ type: Boolean, default: false })
         ], GitHubButton.prototype, "isLoading", void 0);
         __decorate([
+            Prop({ type: Boolean, default: false })
+        ], GitHubButton.prototype, "reverse", void 0);
+        __decorate([
             Prop({ type: Number, default: 0 })
         ], GitHubButton.prototype, "count", void 0);
         __decorate([
@@ -1339,7 +1342,7 @@ var VueGitHubButtons = (function (Vue) {
     const __vue_script__$5 = GitHubButton;
 
     /* template */
-    var __vue_render__$5 = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"gh-button-container"},[(!_vm.isLoading)?[_c('a',{staticClass:"gh-button",class:{ 'with-count': _vm.hasCount },attrs:{"href":_vm.fullLink,"target":"_blank","rel":"noopener"}},[_c(_vm.iconComponentName,{tag:"component"}),_vm._v(" "),_vm._t("default")],2),_vm._v(" "),(_vm.hasCount)?_c('a',{staticClass:"social-count",attrs:{"href":_vm.fullCountLink,"target":_vm.hasCountLink ? '_blank' : null,"rel":"noopener"}},[_vm._v("\n\t\t\t"+_vm._s(_vm._f("formatNumber")(_vm.count))+"\n\t\t")]):_vm._e()]:[_c('a',{staticClass:"gh-button"},[_c('sync-icon')],1)]],2)};
+    var __vue_render__$5 = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"gh-button-container",class:{reverse: _vm.reverse}},[(!_vm.isLoading)?[_c('a',{staticClass:"gh-button",class:{ 'with-count': _vm.hasCount,reverse: _vm.reverse },attrs:{"href":_vm.fullLink,"target":"_blank","rel":"noopener"}},[_c(_vm.iconComponentName,{tag:"component"}),_vm._v(" "),_vm._t("default")],2),_vm._v(" "),(_vm.hasCount)?_c('a',{staticClass:"social-count",class:{reverse: _vm.reverse},attrs:{"href":_vm.fullCountLink,"target":_vm.hasCountLink ? '_blank' : null,"rel":"noopener"}},[_vm._v("\n\t\t\t"+_vm._s(_vm._f("formatNumber")(_vm.count))+"\n\t\t")]):_vm._e()]:[_c('a',{staticClass:"gh-button"},[_c('sync-icon')],1)]],2)};
     var __vue_staticRenderFns__$5 = [];
 
       /* style */
@@ -1501,6 +1504,9 @@ var VueGitHubButtons = (function (Vue) {
         __decorate([
             Prop({ type: Boolean, default: false })
         ], RepoMixin.prototype, "showCount", void 0);
+        __decorate([
+            Prop({ type: Boolean, default: false })
+        ], RepoMixin.prototype, "reverse", void 0);
         RepoMixin = __decorate([
             Component
         ], RepoMixin);
@@ -1791,7 +1797,7 @@ var VueGitHubButtons = (function (Vue) {
     const __vue_script__$8 = GitHubButtonStar;
 
     /* template */
-    var __vue_render__$8 = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('gh-button',{attrs:{"is-loading":_vm.isLoading,"link":_vm.slug,"count":_vm.count,"count-link":(_vm.slug + "/stargazers"),"icon":_vm.icon || 'star'}},[_vm._v("\n\tStar\n")])};
+    var __vue_render__$8 = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('gh-button',{attrs:{"is-loading":_vm.isLoading,"link":_vm.slug,"count":_vm.count,"count-link":(_vm.slug + "/stargazers"),"icon":_vm.icon || 'star',"reverse":_vm.reverse}},[_vm._t("default",[_vm._v("Star")])],2)};
     var __vue_staticRenderFns__$8 = [];
 
       /* style */
